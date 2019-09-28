@@ -24,7 +24,7 @@ def plot_generated_images(epoch, generator,examples = 25, dim = (5, 5), random_d
         plt.imshow(generated_images[i,:,:,0], interpolation='nearest', cmap='gray')
     plt.suptitle("Epoch {}".format(epoch), x = 0.5, y = 1.0)
     plt.tight_layout()
-    plt.savefig("images\\numbers_at_epoch_{}.png".format(epoch))
+    plt.savefig("generated_images\\numbers_at_epoch_{}.png".format(epoch))
     
 def plot_loss(d, g):
     plt.figure(figsize = (18, 12))
