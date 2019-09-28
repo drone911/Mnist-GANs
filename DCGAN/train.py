@@ -10,6 +10,7 @@ from models import *
 import numpy as np
 from keras.datasets import mnist
 from tqdm import tqdm
+import warnings
 
 def train(train_images, generator, discriminator, gan, num_classes=120, random_dim=128, epochs=100, batch_size=128):
     num_train_images=train_images.shape[0]
@@ -55,9 +56,12 @@ def train(train_images, generator, discriminator, gan, num_classes=120, random_d
                 discriminator.save_weights("models\\disc_v1_epoch_{}.h5".format(e))
                 generator.save_weights("models\\gen_v1_epoch_{}.h5".format(e))
         except:
-            iterator.close()
             print("Interrupted")
+            iterator.close()
+
 if __name__=="__main__":    
+    
+    warnings.filterwarnings()
     (train_images, train_labels), (test_images, test_labels)=mnist.load_data()
     random_dim=100
     batch_size=128
