@@ -53,7 +53,6 @@ def get_gen_nn(start_dim=128*7*7, random_dim=128, lr=0.0002, beta_1=0.5, weights
 
     model.add(UpSampling2D())
     model.add(Conv2D(1, kernel_size=5, padding='same', activation='tanh'))
-    #model.compile(loss='binary_crossentropy', optimizer=Adam(lr=lr, beta_1=beta_1))
     
     if weights_path:
         try:
