@@ -55,13 +55,14 @@ def train(train_images, generator, discriminator, gan, num_classes=120, random_d
             if e % 10 == 0:
                 discriminator.save_weights("models\\disc_v1_epoch_{}.h5".format(e))
                 generator.save_weights("models\\gen_v1_epoch_{}.h5".format(e))
-        except:
-            print("Interrupted")
+        except KeyboardInterrupt :
+            print("\n Interrupted by Keyboard")
+            break
+        finally :
             iterator.close()
-
 if __name__=="__main__":    
     
-    warnings.filterwarnings()
+    warnings.filterwarnings("ignore")
     (train_images, train_labels), (test_images, test_labels)=mnist.load_data()
     random_dim=100
     batch_size=128
