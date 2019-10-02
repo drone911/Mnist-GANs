@@ -55,11 +55,10 @@ def train(train_images, generator, discriminator, gan, num_classes=120, random_d
             if e % 10 == 0:
                 discriminator.save_weights("models\\disc_v1_epoch_{}.h5".format(e))
                 generator.save_weights("models\\gen_v1_epoch_{}.h5".format(e))
-        except KeyboardInterrupt :
-            print("\n Interrupted by Keyboard")
-            break
-        finally :
+        except KeyboardInterrupt:
             iterator.close()
+            print("Interrupted")
+            break
 if __name__=="__main__":    
     
     warnings.filterwarnings("ignore")
