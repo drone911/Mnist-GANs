@@ -1,2 +1,2 @@
 # Mnist-GANs
- this repository contains various GAN I implemented on Mnist dataset
+This repository contains two GAN's that I implemented on the Mnist dataset
